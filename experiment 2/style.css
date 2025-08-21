@@ -1,0 +1,126 @@
+/* Default Light Theme */
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+  --sidebar-bg: linear-gradient(135deg, #4f46e5, #6366f1);
+  --card-bg: #ffffff;
+  --accent: #6366f1;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --sidebar-bg: linear-gradient(135deg, #1e1b4b, #312e81);
+  --card-bg: #1e293b;
+  --accent: #818cf8;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--sidebar-bg);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 0.8rem 1rem;
+  margin: 0.3rem 0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#theme-toggle {
+  font-size: 1.2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 70px 1fr;
+  }
+  .sidebar .logo,
+  .sidebar nav a {
+    display: none;
+  }
+}
