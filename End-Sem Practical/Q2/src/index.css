@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom right,
+    #0f172a,  /* slate-900 */
+    #334155   /* slate-700 */
+  );
+
+  font-family: "Poppins", sans-serif;
+}
